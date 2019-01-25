@@ -10,7 +10,7 @@ You're 4 steps away from adding great in-app support to your Xamarin App.
 
 # Step 1: Download UserIQSDK
 
-[UserIQSDK.dll] (./Android/UserIQSDK.dll)
+Download [UserIQSDK.dll](./Android/UserIQSDK.dll)
 
 # Step 2: Add UserIQSDK to your Xamarin project
 - Add the UserIQSDK.dll to the References in your Android specific project. 
