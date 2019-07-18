@@ -42,7 +42,8 @@ namespace UserIQXamarinSampleApp {
             // Initialize the UserIQSDK
             UserIQSDK.Init(Application, "API_KEY");
 
-            //Set the user
+            // Set user. Can be called from any other activity AFTER user login. 
+            // NOTE: SDK will be initalized only after the user has been set 
             UserIQSDK.User user = new UserIQSDK.UserBuilder()
                 .SetId("EMP124")
                 .SetAccountId("1")
@@ -59,8 +60,19 @@ namespace UserIQXamarinSampleApp {
 
 #### iOS
 
+Set the api key of the SDK in  `FinishedLaunching` method of `AppDelegate.cs`.
+
 ```cs
-    UserIQSDK.SharedInstance.InitWithAPIKey("<YOUR_API_KEY>", "EMP124", "Alex", "alex@useriq.com",1,"Acme Corp", "2017-04-21",null);
+    // Set API Key
+    UserIQSDK.SharedInstance.InitWithAPIKey("<your-api-key>");
+```
+
+Set the user once you have the user info.
+>  NOTE: SDK will be initalized only after the user has been set
+
+```cs
+    // Set user
+    UserIQSDK.SharedInstance.SetUserId("EMP124", "Alex", "alex@useriq.com", "1", "Acme Corp", "2017-04-01", null);
 ```
 
 ## Step 4: Start using UserIQ
@@ -94,3 +106,18 @@ bool isContextualHelpShown = UserIQSDK.ShowCtxHelp();
 ```
 
 Contextual help will only be shown when the current screen is tagged. If the current screen is not tagged then the above API will return `false`
+
+
+## ⚠ Important  
+
+It is recommended that `AutomationId` is added to the view in `.xaml` files for views which needs tracking. This can be used in the dashboard for identifying features and screens
+
+```xml
+<Button Text="Checkout" AutomationId="checkoutBtn" />
+```
+
+## Android Only
+
+In case of android apps, make sure that views that needs click tracking has click tracker attached to it or `clickable` is set to `true`. 
+
+For view with `clickable` set as `false`,UserIQSDK won't be able to track the clicks due to limitation of Android SDK.
