@@ -121,3 +121,8 @@ It is recommended that `AutomationId` is added to the view in `.xaml` files for 
 In case of android apps, make sure that views that needs click tracking has click tracker attached to it or `clickable` is set to `true`. 
 
 For view with `clickable` set as `false`,UserIQSDK won't be able to track the clicks due to limitation of Android SDK.
+
+# API & USAGE
+
+For more details on API & usage, please refer to [wiki page](https://github.com/useriq-com/useriq-xamarin-sdk/wiki)
+
