@@ -126,3 +126,10 @@ For view with `clickable` set as `false`,UserIQSDK won't be able to track the cl
 
 For more details on API & usage, please refer to [wiki page](https://github.com/useriq-com/useriq-xamarin-sdk/wiki)
 
+# ChangeLog
+
+[Android Changelog](https://github.com/useriq-com/android-sdk/blob/master/CHANGELOG.md)
+
+[iOS Changelog](https://github.com/useriq-com/ios-sdk/blob/master/CHANGELOG.md)
+
+
