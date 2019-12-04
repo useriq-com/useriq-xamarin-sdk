@@ -107,6 +107,19 @@ bool isContextualHelpShown = UserIQSDK.ShowCtxHelp();
 
 Contextual help will only be shown when the current screen is tagged. If the current screen is not tagged then the above API will return `false`
 
+## Step 5 : Logout
+
+If a user logs out, the user can be reset to anonymous user just by calling the `logout` API. Make sure this method is called when the user logs out, so that login screen tracking and other information not related to the user does not get linked to the user.
+
+- iOS
+    ```cs
+        UserIQSDK.SharedInstance.Logout();
+    ```
+
+- Android
+    ```cs
+        UserIQSDK.LogOut();
+    ```
 
 ## ⚠ Important  
 
